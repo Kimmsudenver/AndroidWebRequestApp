@@ -11,6 +11,7 @@ import android.widget.Spinner;
 
 import com.kimtbui.shapeshiftprice.Data.CoinAdapter;
 import com.kimtbui.shapeshiftprice.Data.CoinData;
+import com.kimtbui.shapeshiftprice.WebRequest.ShapeshiftRequest;
 
 import java.util.ArrayList;
 
@@ -35,12 +36,14 @@ public class MainActivityFragment extends Fragment {
         coinListView = (ListView) view.findViewById(R.id.coinList);
         spinner = (Spinner) view.findViewById(R.id.chooseCoin);
         coinDataList = new ArrayList<>();
-        coinDataList.add(new CoinData("BTC", (float) 0.00));
-        coinDataList.add(new CoinData("LTC", (float)1.00));
-        coinDataList.add(new CoinData("ETH", (float) 1.00));
+        coinDataList.add(new CoinData("BTC"));
+        coinDataList.add(new CoinData("LTC"));
+        coinDataList.add(new CoinData("ETH"));
+       // coinDataList = ShapeshiftRequest.get
         CoinAdapter coinAdapter = new CoinAdapter(getContext(),android.R.layout.simple_list_item_1,coinDataList);
         coinAdapter.setInfalter(inflater);
         coinAdapter.setNotifyOnChange(true);
+        ShapeshiftRequest.getAllCoinData();
         coinListView.setAdapter(coinAdapter);
 
         setUpSpinner();

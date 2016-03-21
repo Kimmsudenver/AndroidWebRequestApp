@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kimtbui.shapeshiftprice.R;
+import com.kimtbui.shapeshiftprice.WebRequest.ShapeshiftRequest;
 
 import java.util.ArrayList;
 //TODO TODO convert to butterknife
@@ -23,6 +24,7 @@ public class CoinAdapter extends ArrayAdapter {
     TextView coinName,price;
     ImageView chart;
     Button tradeButton;
+    CoinData btcCoin;
 
 
     public CoinAdapter(Context context, int resource, ArrayList<CoinData> coinDataList) {
@@ -44,8 +46,13 @@ public class CoinAdapter extends ArrayAdapter {
         CoinData coin = (CoinData)this.getItem(position);
         coinName = (TextView) view.findViewById(R.id.coinName);
         coinName.setText(coin.getName());
+
+        //set base coin is btc
+        btcCoin = new CoinData("BTC");
         price = (TextView) view.findViewById(R.id.coinPrice);
-        price.setText(String.valueOf(coin.getPrice()));
+       // price.setText((int) ShapeshiftRequest.getRate(coin,btcCoin));
+        int result = (int) ShapeshiftRequest.getRate(coin,btcCoin);
+
         return view;
 
     }

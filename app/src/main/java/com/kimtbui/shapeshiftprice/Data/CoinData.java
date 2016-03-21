@@ -7,12 +7,16 @@ import android.media.Image;
  */
 public class CoinData {
 
-    public CoinData(String inName, float inPrice, Image image){
+    public CoinData(String inName, Image image){
         name = inName;
-        price = inPrice;
+      //  price = inPrice;
         icon = image;
 
 
+    }
+
+    public CoinData(String inName){
+        name = inName;
     }
 
     public Image getIcon() {
@@ -35,14 +39,6 @@ public class CoinData {
         this.name = name;
     }
 
-    public float getPrice() {
-        return price;
-    }
 
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    private float price;
 
 }
