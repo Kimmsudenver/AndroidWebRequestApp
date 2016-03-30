@@ -3,10 +3,12 @@ package com.kimtbui.shapeshiftprice.Data;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.io.Serializable;
+
 /**
  * Created by kimbui on 3/6/16.
  */
-public class CoinData implements Parcelable {
+public class CoinData implements Parcelable, Serializable {
 
    private String name;
 

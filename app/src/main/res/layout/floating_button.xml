@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivityFragment"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/AppTheme">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_primary_pressed"/>
+
+    <include layout="@layout/fragment_main" />
+
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_refresh"
+        fab:fabSize="normal"
+        android:layout_gravity="bottom|end"
+        fab:fab_colorNormal="@color/app_primary"
+        fab:fab_colorPressed="@color/app_primary_pressed"
+        fab:fab_colorRipple="@color/app_ripple"/>
+</android.support.design.widget.CoordinatorLayout>

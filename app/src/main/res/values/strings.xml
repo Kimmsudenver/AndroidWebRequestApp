@@ -1,11 +1,12 @@
 <resources>
-    <string name="app_name">Shapeshift price</string>
+    <string name="app_name">ShiftAPI</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title">Shapeshift Prices</string>
+    <string name="title">Shapeshift Info</string>
     <string name="trade">Trade</string>
     <string name="list">Prices List</string>
     <string name="coin">Choose Coin</string>
     <string name="chart">chart</string>
+    <string name="contact">Contact Developer</string>
 
 </resources>
